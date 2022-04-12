@@ -4,7 +4,7 @@
 #
 Name     : pypi-logilab_common
 Version  : 1.9.3
-Release  : 87
+Release  : 88
 URL      : https://files.pythonhosted.org/packages/39/ba/e8db2c447c877d8769a98f8309183ad79dc00c687270722e279ee6a63346/logilab-common-1.9.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/39/ba/e8db2c447c877d8769a98f8309183ad79dc00c687270722e279ee6a63346/logilab-common-1.9.3.tar.gz
 Summary  : collection of low-level Python packages and modules used by Logilab projects
@@ -75,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1648738529
+export SOURCE_DATE_EPOCH=1649781944
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
