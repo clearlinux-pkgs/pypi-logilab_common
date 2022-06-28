@@ -4,7 +4,7 @@
 #
 Name     : pypi-logilab_common
 Version  : 1.9.7
-Release  : 94
+Release  : 95
 URL      : https://files.pythonhosted.org/packages/f5/99/d0edc94e0742ca3423b48490c3905628239eec99f9b29d115ed7b578039a/logilab-common-1.9.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f5/99/d0edc94e0742ca3423b48490c3905628239eec99f9b29d115ed7b578039a/logilab-common-1.9.7.tar.gz
 Summary  : collection of low-level Python packages and modules used by Logilab projects
@@ -78,7 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1654700486
+export SOURCE_DATE_EPOCH=1656387202
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -116,7 +116,7 @@ pip install --root=%{buildroot}-v3 --no-deps --ignore-installed dist/*.whl
 popd
 ## Remove excluded files
 rm -f %{buildroot}*/usr/bin/pytest
-/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
