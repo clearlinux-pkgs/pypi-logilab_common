@@ -4,7 +4,7 @@
 #
 Name     : pypi-logilab_common
 Version  : 1.9.7
-Release  : 101
+Release  : 102
 URL      : https://files.pythonhosted.org/packages/f5/99/d0edc94e0742ca3423b48490c3905628239eec99f9b29d115ed7b578039a/logilab-common-1.9.7.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f5/99/d0edc94e0742ca3423b48490c3905628239eec99f9b29d115ed7b578039a/logilab-common-1.9.7.tar.gz
 Summary  : collection of low-level Python packages and modules used by Logilab projects
@@ -19,6 +19,9 @@ BuildRequires : pypi(mypy_extensions)
 BuildRequires : pypi(setuptools)
 BuildRequires : pypi(typing_extensions)
 BuildRequires : pypi-pytest
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 Logilab's common library
@@ -78,17 +81,17 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656395214
+export SOURCE_DATE_EPOCH=1672288210
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$FFLAGS -fno-lto "
-export FFLAGS="$FFLAGS -fno-lto "
-export CXXFLAGS="$CXXFLAGS -fno-lto "
+export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
-export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -msse2avx"
-export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -msse2avx "
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
@@ -100,8 +103,8 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-logilab_common
-cp %{_builddir}/logilab-common-1.9.7/COPYING %{buildroot}/usr/share/package-licenses/pypi-logilab_common/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
-cp %{_builddir}/logilab-common-1.9.7/COPYING.LESSER %{buildroot}/usr/share/package-licenses/pypi-logilab_common/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/logilab-common-%{version}/COPYING %{buildroot}/usr/share/package-licenses/pypi-logilab_common/06877624ea5c77efe3b7e39b0f909eda6e25a4ec || :
+cp %{_builddir}/logilab-common-%{version}/COPYING.LESSER %{buildroot}/usr/share/package-licenses/pypi-logilab_common/9a1929f4700d2407c70b507b3b2aaf6226a9543c || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
