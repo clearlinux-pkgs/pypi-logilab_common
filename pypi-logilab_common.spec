@@ -5,7 +5,7 @@
 #
 Name     : pypi-logilab_common
 Version  : 1.10.0
-Release  : 105
+Release  : 106
 URL      : https://files.pythonhosted.org/packages/cb/65/69b03e6fd83e2c2a29b991db5f22b1cbe0a9dc6fd297cf4a7972c97ff613/logilab-common-1.10.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cb/65/69b03e6fd83e2c2a29b991db5f22b1cbe0a9dc6fd297cf4a7972c97ff613/logilab-common-1.10.0.tar.gz
 Summary  : collection of low-level Python packages and modules used by Logilab projects
