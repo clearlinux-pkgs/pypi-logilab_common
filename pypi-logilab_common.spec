@@ -7,7 +7,7 @@
 #
 Name     : pypi-logilab_common
 Version  : 2.0.0
-Release  : 108
+Release  : 109
 URL      : https://files.pythonhosted.org/packages/ca/c7/875df9e513d29486557b495bc0260ec38f03b077f49a5d92de50bdf8ffce/logilab-common-2.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ca/c7/875df9e513d29486557b495bc0260ec38f03b077f49a5d92de50bdf8ffce/logilab-common-2.0.0.tar.gz
 Summary  : collection of low-level Python packages and modules used by Logilab projects
@@ -81,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1701899349
+export SOURCE_DATE_EPOCH=1702068933
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
