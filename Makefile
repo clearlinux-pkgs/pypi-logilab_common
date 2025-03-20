@@ -1,5 +1,5 @@
 PKG_NAME := pypi-logilab_common
-URL = https://files.pythonhosted.org/packages/ca/c7/875df9e513d29486557b495bc0260ec38f03b077f49a5d92de50bdf8ffce/logilab-common-2.0.0.tar.gz
+URL = https://files.pythonhosted.org/packages/30/28/fb229e2c8736540fc0aa21a7d85dc43a89823dc3f039f1bbab70b0163ad4/logilab_common-2.1.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
